@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import Header from './Header';
-import ChatWindow from './ChatWindow';
-import ChatList from './ChatList';
+import React, { useState } from "react";
+import styled from "styled-components";
+import Header from "./components/Header";
+import ChatList from "./components/ChatList";
+import ChatWindow from "./components/ChatWindow";
 
 const AppContainer = styled.div`
   display: flex;
@@ -27,20 +27,10 @@ function App() {
       <Header />
       <BodyContainer>
         <ChatList selectChat={selectChat} />
-        {activeChat ? <ChatWindow chat={activeChat} /> : <NoChatSelected>Nachricht auswählen</NoChatSelected>}
+        <ChatWindow chat={activeChat} />
       </BodyContainer>
     </AppContainer>
   );
 }
-
-const NoChatSelected = styled.div`
-  flex: 0.65;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f2f2f2;
-  font-size: 24px;
-  color: #525252;
-`;
 
 export default App;

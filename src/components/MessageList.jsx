@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import MessageItem from './MessageItem';
+import React from "react";
+import styled from "styled-components";
+import MessageItem from "./MessageItem";
 
 const MessageListContainer = styled.div`
   flex: 1;
@@ -11,7 +11,8 @@ const MessageListContainer = styled.div`
   gap: 10px;
 `;
 
-function MessageList({ messages }) {
+function MessageList({ messages = [] }) {
+  // Standardwert als leeres Array setzen
   return (
     <MessageListContainer>
       {messages.map((msg, index) => (
