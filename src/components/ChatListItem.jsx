@@ -15,7 +15,7 @@ const ChatListItemContainer = styled.div`
 
 function ChatListItem({ name, onSelect, isActive }) {
   return (
-    <ChatListItemContainer isActive={isActive} onClick={onSelect}>
+    <ChatListItemContainer isactive={isActive} onClick={onSelect}>
       {name}
     </ChatListItemContainer>
   );

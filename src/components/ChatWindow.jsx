@@ -17,7 +17,6 @@ const ChatHeader = styled.div`
   font-weight: bold;
 `;
 
-// Der Rest des Stylings bleibt unverändert
 
 function ChatWindow({ chat }) {
   return (

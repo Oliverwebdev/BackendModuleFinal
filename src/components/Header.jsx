@@ -11,7 +11,7 @@ const HeaderContainer = styled.div`
 
 function Header() {
   return (
-    <HeaderContainer>Mein WhatsApp Klon</HeaderContainer>
+    <HeaderContainer>WhisperSphere</HeaderContainer>
   );
 }
 
