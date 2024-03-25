@@ -4,6 +4,7 @@ import styled from "styled-components";
 // import ChatList from "./components/ChatList";
 // import ChatWindow from "./components/ChatWindow";
 import ChatSwitcher from "./components/ChatSwitcher";
+import Header from "./components/Header";
 
 const AppContainer = styled.div`
   display: flex;
@@ -25,7 +26,8 @@ function App() {
 
   return (
     <>
-     <ChatSwitcher />
+      <Header />
+      <ChatSwitcher />
     </>
   );
 }

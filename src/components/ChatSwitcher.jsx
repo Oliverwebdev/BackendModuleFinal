@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-// Vorhandene Styled Components...
 const Container = styled.div`
   display: flex;
   flex-direction: row;
@@ -30,6 +29,8 @@ const ChatAnzeigeContainer = styled.div`
   flex-grow: 1;
   overflow-y: auto;
   background-color: #d2d2d2; /* Hintergrund des Chatfensters ähnlich WhatsApp */
+  display: flex;
+  flex-direction: column;
   @media (max-width: 768px) {
     border-top: 1px solid #ccc;
   }
@@ -60,6 +61,7 @@ const NachrichtenForm = styled.form`
   display: flex;
   padding: 10px;
   background-color: #f0f0f0; /* Footer Hintergrund ähnlich WhatsApp */
+  margin-top: auto; /* Positioniert das Formular am unteren Rand des ChatAnzeigeContainers */
 `;
 
 const NachrichtenInput = styled.input`
@@ -82,12 +84,18 @@ const SendenButton = styled.button`
   }
 `;
 
+const ChatInhalt = styled.div`
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+`;
+
 const ChatSwitcher = () => {
-  // Definiere dummyChats innerhalb der Komponente
   const dummyChats = [
     { id: 1, name: 'Chat 1', content: 'Willkommen im Chat 1' },
     { id: 2, name: 'Chat 2', content: 'Willkommen im Chat 2' },
-    // Füge bei Bedarf weitere Dummy-Chats hinzu
   ];
 
   const [aktuellerChat, setAktuellerChat] = useState(dummyChats[0]);
@@ -99,9 +107,8 @@ const ChatSwitcher = () => {
 
   const handleNachrichtenSenden = (e) => {
     e.preventDefault();
-    // Logik zum Senden der Nachricht hier...
     console.log(nachricht);
-    setNachricht(''); // Eingabefeld zurücksetzen
+    setNachricht(''); 
   };
 
   return (
@@ -114,7 +121,9 @@ const ChatSwitcher = () => {
         ))}
       </ChatAuswahlContainer>
       <ChatAnzeigeContainer>
-        {aktuellerChat ? aktuellerChat.content : 'Bitte einen Chat auswählen.'}
+        <ChatInhalt>
+          {aktuellerChat ? aktuellerChat.content : 'Bitte einen Chat auswählen.'}
+        </ChatInhalt>
         <NachrichtenForm onSubmit={handleNachrichtenSenden}>
           <NachrichtenInput 
             type="text" 
@@ -130,4 +139,3 @@ const ChatSwitcher = () => {
 };
 
 export default ChatSwitcher;
-
