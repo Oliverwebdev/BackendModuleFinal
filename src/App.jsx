@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Header from "./components/Header";
-import ChatList from "./components/ChatList";
-import ChatWindow from "./components/ChatWindow";
+// import Header from "./components/Header";
+// import ChatList from "./components/ChatList";
+// import ChatWindow from "./components/ChatWindow";
+import ChatSwitcher from "./components/ChatSwitcher";
 
 const AppContainer = styled.div`
   display: flex;
@@ -23,13 +24,9 @@ function App() {
   };
 
   return (
-    <AppContainer>
-      <Header />
-      <BodyContainer>
-        <ChatList selectChat={selectChat} />
-        <ChatWindow chat={activeChat} />
-      </BodyContainer>
-    </AppContainer>
+    <>
+     <ChatSwitcher />
+    </>
   );
 }
 

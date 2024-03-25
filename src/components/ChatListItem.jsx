@@ -5,7 +5,7 @@ const ChatListItemContainer = styled.div`
   padding: 20px;
   cursor: pointer;
   background-color: #ffffff; // Standard Hintergrundfarbe
-  ${props => props.isActive && css`
+  ${props => props.isactive && css`
     background-color: #ebebeb; // Farbe für aktiven Chat
   `}
   &:hover {
@@ -13,9 +13,9 @@ const ChatListItemContainer = styled.div`
   }
 `;
 
-function ChatListItem({ name, onSelect, isActive }) {
+function ChatListItem({ name, onSelect, isactive }) {
   return (
-    <ChatListItemContainer isactive={isActive} onClick={onSelect}>
+    <ChatListItemContainer isactive={isactive} onClick={onSelect}>
       {name}
     </ChatListItemContainer>
   );

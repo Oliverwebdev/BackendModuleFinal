@@ -8,7 +8,7 @@ const ChatListContainer = styled.div`
 `;
 
 function ChatList({ selectChat, activeChat }) {
-  const chats = ["Chat 1", "Chat 2", "Chat 3", "Chat 4"]; // Dummy-Daten
+  const chats = ["Chat 1", "Chat 2", "Chat 3", "Chat 4"]; 
 
   return (
     <ChatListContainer>
